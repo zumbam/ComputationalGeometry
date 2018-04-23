@@ -8,6 +8,7 @@ public:
 	Strecke(float _p1, float _p2, float _q1, float _q2);
 
 float CCW(float r1, float r2);
+bool operator%(Strecke andere);
 };
 
 
