@@ -13,6 +13,20 @@ Point::Point(float _x, float _y) {
 	y = _y;
 }
 
+string Point::float2string(float i)
+{
+	stringstream out;
+	out << i;
+	return out.str();
+}
+
+string Point::print()
+{
+	return float2string(x) + " " + float2string(y);
+}
+
+
+
 
 Point::~Point()
 {
