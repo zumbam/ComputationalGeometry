@@ -1,4 +1,5 @@
 #pragma once
+
 class Event
 {
 	/*
@@ -7,13 +8,11 @@ class Event
 	if both != -1 => Event= Intersection
 	if both -1 => Event uninitialized/Error
 	*/
+
+
+
+
 public:
-
-
-	Event();
-	Event(int IdxStart, int IdxEnd, float X, float Y);
-	~Event();
-
 	//-1 if not used
 	int idxStart;
 	//-1 if not used
@@ -21,5 +20,12 @@ public:
 
 	float x;
 	float y;
+
+	Event();
+	Event(int IdxStart, int IdxEnd, float X, float Y);
+	~Event();
+
+
+	
 };
 
