@@ -11,7 +11,9 @@ public:
 
 	string print();
 
-	
+	bool operator==(Point point){
+		return this->x == point.x && this->y == point.y;
+	}
 
 	~Point();
 	float x;
