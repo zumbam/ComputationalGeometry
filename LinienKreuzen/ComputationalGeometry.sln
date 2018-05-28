@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinienKreuzen", "LinienKreuzen\LinienKreuzen.vcxproj", "{A4B6ED5A-126D-4140-81FA-BBAB8EC6475D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Grundlagen", "LinienKreuzen\LinienKreuzen.vcxproj", "{A4B6ED5A-126D-4140-81FA-BBAB8EC6475D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LineSweepAlgorithmen", "LineSweepAlgorithmen\LineSweepAlgorithmen.vcxproj", "{8053511B-A118-4F2D-8B56-364EEA9A5E90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{A4B6ED5A-126D-4140-81FA-BBAB8EC6475D}.Release|x64.Build.0 = Release|x64
 		{A4B6ED5A-126D-4140-81FA-BBAB8EC6475D}.Release|x86.ActiveCfg = Release|Win32
 		{A4B6ED5A-126D-4140-81FA-BBAB8EC6475D}.Release|x86.Build.0 = Release|Win32
+		{8053511B-A118-4F2D-8B56-364EEA9A5E90}.Debug|x64.ActiveCfg = Debug|x64
+		{8053511B-A118-4F2D-8B56-364EEA9A5E90}.Debug|x64.Build.0 = Debug|x64
+		{8053511B-A118-4F2D-8B56-364EEA9A5E90}.Debug|x86.ActiveCfg = Debug|Win32
+		{8053511B-A118-4F2D-8B56-364EEA9A5E90}.Debug|x86.Build.0 = Debug|Win32
+		{8053511B-A118-4F2D-8B56-364EEA9A5E90}.Release|x64.ActiveCfg = Release|x64
+		{8053511B-A118-4F2D-8B56-364EEA9A5E90}.Release|x64.Build.0 = Release|x64
+		{8053511B-A118-4F2D-8B56-364EEA9A5E90}.Release|x86.ActiveCfg = Release|Win32
+		{8053511B-A118-4F2D-8B56-364EEA9A5E90}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

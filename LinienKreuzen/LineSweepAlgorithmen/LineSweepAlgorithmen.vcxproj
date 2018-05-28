@@ -20,11 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{A4B6ED5A-126D-4140-81FA-BBAB8EC6475D}</ProjectGuid>
+    <ProjectGuid>{8053511B-A118-4F2D-8B56-364EEA9A5E90}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>LinienKreuzen</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
-    <ProjectName>Grundlagen</ProjectName>
+    <RootNamespace>LineSweepAlgorithmen</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -148,17 +147,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Event.h" />
-    <ClInclude Include="Linie.h" />
-    <ClInclude Include="Point.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Event.cpp" />
-    <ClCompile Include="Linie.cpp" />
-    <ClCompile Include="LinienKreuzen.cpp" />
-    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="LineSweepAlgorithmen.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
