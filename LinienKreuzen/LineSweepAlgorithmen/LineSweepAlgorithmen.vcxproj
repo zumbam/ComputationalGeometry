@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Event.h" />
+    <ClInclude Include="LineSweepAlgorithmen.h" />
     <ClInclude Include="Linie.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="stdafx.h" />

@@ -25,8 +25,6 @@ Event::~Event()
 }
 
 
-
-
 void Event::print()
 {
 	using namespace std;
