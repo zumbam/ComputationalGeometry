@@ -50,7 +50,5 @@ void Event::print()
 		type = "end";
 	}
 
-	cout << type << " x " << x<< " y " << y << endl;
-
-	
+	cout << type << " x " << std::fixed <<setprecision(7)<< x<< " y " << setprecision(7) << y << endl;
 }

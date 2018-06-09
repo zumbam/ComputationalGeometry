@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <iomanip> 
 /*
 idx repräsentiert welche Linie es ist
 if idxStart != -1 => Event= Start of Line
@@ -31,9 +32,5 @@ public:
 	~Event();
 
 	
-
-	void print();
-
-	
+	void print();	
 };
-
