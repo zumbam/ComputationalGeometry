@@ -78,7 +78,7 @@ SVGReader::SVGReader(std::string path)
 		std::string id = cur_path.get<std::string>("<xmlattr>.id");
 		std::string path = cur_path.get<std::string>("<xmlattr>.d");
 		BundesLand curstate = parsePath(path, id);
-		std::cout << curstate <<std::endl;
+		land.push_back(curstate);
 	}
 
 	// test only first element
@@ -99,4 +99,9 @@ void readPath() {
 
 SVGReader::~SVGReader()
 {
+}
+
+std::vector<BundesLand> SVGReader::getLand()
+{
+	return land;
 }

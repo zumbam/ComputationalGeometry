@@ -1,6 +1,12 @@
+#ifndef POLYGON_H
+#define POLYGON_H
+
 #include <vector>
 #include <iostream>
 #include <string>
+
+
+
 
 class Point2D{
 
@@ -79,3 +85,5 @@ friend std::ostream& operator<<(std::ostream& stream, const BundesLand& bundesla
 	return stream;
 }
 };
+
+#endif

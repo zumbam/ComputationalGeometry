@@ -18,9 +18,10 @@ public:
 	SVGReader(std::string path);
 	~SVGReader();
 
-
+	std::vector<BundesLand> getLand();
 
 private:
 	std::string path;
+	std::vector<BundesLand> land;
 };
 

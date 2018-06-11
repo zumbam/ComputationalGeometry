@@ -24,6 +24,15 @@
     <ClInclude Include="SVGReader.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonAlgorithm.h">
+      <Filter>Quelldateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonAlgorithmTests.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -38,5 +47,10 @@
     <ClCompile Include="Polygon.h">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Aufgabe2.rc">
+      <Filter>Ressourcendateien</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
