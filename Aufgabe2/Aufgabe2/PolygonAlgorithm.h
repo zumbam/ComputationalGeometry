@@ -16,3 +16,33 @@ float static calcAreaOfPolygon(const Polygon &polygon) {
 
 
 }
+
+void static calcMaxMin(const Polygon &polygon, float& minX, float& maxX, float& minY, float& maxY) {
+
+	minX = 0.f;
+	maxX = 0.f;
+	minY = 0.f;
+	maxY = 0.f;
+
+	for (auto iter = polygon.PointList.begin(); iter != polygon.PointList.end(); iter++) {
+		minX = (iter->x < minX) ? iter->x : minX;
+		maxX = (iter->x > maxX) ? iter->x : maxX;	
+		minY = (iter->y < minY) ? iter->y : minY;
+		maxY = (iter->y > maxY) ? iter->y : maxY;
+	}
+}
+
+float static pointInPolygon(const Polygon &polygon, const Point2D& Point) {
+	float minX = 0.f;
+	float maxX = 0.f;
+	float minY = 0.f;
+	float maxY = 0.f;
+
+	calcMaxMin(polygon, minX, maxX, minY, maxY);
+
+	Point2D P_snake(minX - 1, minY - 1);
+
+
+	
+
+}
