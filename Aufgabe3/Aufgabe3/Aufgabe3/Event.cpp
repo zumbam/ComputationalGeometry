@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "Event.h"
 
-
-
 Event::Event()
 {
 	idxStart = -1;
@@ -50,5 +48,5 @@ void Event::print()
 		type = "end";
 	}
 
-	cout << type << " x " << std::fixed <<setprecision(7)<< x<< " y " << setprecision(7) << y << endl;
+	cout <<"EVENT \t" <<type <<"\t"<<idxStart<<"  "<<idxEnd <<" x " << std::fixed <<setprecision(7)<< x<< " y " << setprecision(7) << y << endl;
 }

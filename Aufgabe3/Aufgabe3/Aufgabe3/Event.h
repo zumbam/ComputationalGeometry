@@ -20,7 +20,7 @@ public:
 
 	float x;
 	float y;
-
+	//uninitialized Event all values -1
 	Event();
 	/*
 	if idxStart != -1 => Event= Start of Line
@@ -31,6 +31,6 @@ public:
 	Event(int IdxStart, int IdxEnd, float X, float Y);
 	~Event();
 
-	
+	//druckt alle punkte des Events aus
 	void print();	
 };

@@ -2,11 +2,10 @@
 #include "Linie.h"
 
 
-
 Line::Line()
 {
-	p = { 0,0 };
-	q = { 0,0 };
+	p = { -1,-1 };
+	q = { -1,-1 };
 }
 
 Line::Line(Point _p, Point _q)
@@ -17,12 +16,13 @@ Line::Line(Point _p, Point _q)
 
 void Line::slope()
 {
-	//TODO
+	m = (q.y - p.y) / (q.x / p.x);
+
 }
 
 void Line::intercept()
 {
-	//TODO
+	t = p.y - m * p.x;
 }
 
 void Line::swapPQ()
@@ -32,3 +32,7 @@ void Line::swapPQ()
 	p = t;
 }
 
+float Line::getYat(float x)
+{
+	return m * x + t;
+}

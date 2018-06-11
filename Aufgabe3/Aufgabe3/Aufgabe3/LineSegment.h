@@ -1,12 +1,15 @@
 #pragma once
 #include "Linie.h"
+
 class LineSegment
 {
 public:
-	int index;
-	Line linie;
-
-	LineSegment(Line _l, int _index);
+	/*id ist gleichzeitig der index der linie
+	aus dem eingelesenen Lines std::vector*/
+	int id;
+	Line line;
+	LineSegment();
+	LineSegment(Line _l, int _id);
 	~LineSegment();
 };
 

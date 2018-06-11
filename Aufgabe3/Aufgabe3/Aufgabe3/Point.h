@@ -5,10 +5,16 @@ using namespace std;
 class Point
 {
 public:
-	Point();
-	Point(float _x, float _y);
-	string float2string(float i);
+	float x;
+	float y;
 
+	//uninitialized all values -1
+	Point();
+	//Point from x and y
+	Point(float _x, float _y);
+	
+	string float2string(float i);
+	//string representation of a Point
 	string print();
 
 	Point operator+(Point other);
@@ -24,7 +30,6 @@ public:
 	}
 
 	~Point();
-	float x;
-	float y;
+	
 };
 
