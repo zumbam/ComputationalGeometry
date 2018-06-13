@@ -2,6 +2,7 @@
 #include "LineSegment.h"
 #include <vector>
 #include <iostream>
+#include "Schnitte.h"
 class SweepLine
 {
 private:

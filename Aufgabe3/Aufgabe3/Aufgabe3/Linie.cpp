@@ -16,7 +16,7 @@ Line::Line(Point _p, Point _q)
 
 void Line::slope()
 {
-	m = (q.y - p.y) / (q.x / p.x);
+	m = (q.y - p.y) / (q.x - p.x);
 
 }
 

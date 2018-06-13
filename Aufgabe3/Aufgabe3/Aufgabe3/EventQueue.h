@@ -15,6 +15,8 @@ public:
 
 	EventQueue();
 	~EventQueue();
+	//fügt ein Event am ende hinzu
+	void push_back(Event _e);
 	//fügt ein Event entsprechend der x koordinate ein
 	void insert(Event _e);
 	//findet ein Event über seine indices (position irrelevent)
@@ -29,8 +31,11 @@ public:
 	Event back();
 	//gibt das erste element aus
 	Event front();
-	//entfernt das element an stelle index
-	void remove(int index);
+	//finds element end removes it
+	void remove(Event _e);
+	//gets the size
+	int size();
+	
 
 
 

@@ -10,22 +10,29 @@ EventQueue::~EventQueue()
 {
 }
 
+void EventQueue::push_back(Event _e)
+{
+	eventQueue.push_back(_e);
+}
 
 void EventQueue::insert(Event _e)
 {
 	if (find(_e) == -1)
 	{
 
-
+#ifdef _DEBUG
+#ifdef INFO
 		cout << "INSERTING: ";
 		_e.print();
+#endif // INFO
+#endif // _DEBUG
 		if (eventQueue.size() == 0)
 		{
 			eventQueue.push_back(_e);
 		}
 		else
 		{
-			for (int i = eventQueue.size()-1; i >= 0; i--)
+			for (int i = eventQueue.size() - 1; i >= 0; i--)
 			{
 				if (_e.x >= eventQueue[i].x)
 				{
@@ -34,22 +41,26 @@ void EventQueue::insert(Event _e)
 					return;
 				}
 			}
-			if (_e.x>=0)
+			if (_e.x >= 0)
 			{
 				eventQueue.insert(eventQueue.begin(), _e);
 				return;
 			}
 			else
 			{
-				std::cout << "ERROR could not insert EVENT: x <0 " << std::endl;
+				std::cout << "ERROR could not Insert Event not Initialized: x <0 :";
 				_e.print();
 			}
-			
+
 		}
 	}
 	else
 	{
+#ifdef _DEBUG
 		cout << "event already in queue" << endl;
+#endif // _DEBUG
+
+
 	}
 }
 
@@ -65,10 +76,13 @@ int EventQueue::find(Event _e) {
 		else if (_e.idxEnd != -1 && _e.idxStart != -1)
 		{
 			//intersection event
-			if ((_e.idxStart == eventQueue[i].idxStart
-				&&_e.idxEnd == eventQueue[i].idxEnd)
-				|| (_e.idxStart == eventQueue[i].idxEnd
-					&&_e.idxEnd == eventQueue[i].idxStart))
+			bool normal = _e.idxStart == eventQueue[i].idxStart
+				&&_e.idxEnd == eventQueue[i].idxEnd;
+
+			bool inverted = (_e.idxStart == eventQueue[i].idxEnd
+				&&_e.idxEnd == eventQueue[i].idxStart);
+			if (normal || inverted)
+
 			{
 				return i;
 			}
@@ -77,7 +91,8 @@ int EventQueue::find(Event _e) {
 		else if (_e.idxEnd == -1)
 		{
 			//startevent
-			if (_e.idxStart == eventQueue[i].idxStart)
+			if (_e.idxStart == eventQueue[i].idxStart
+				&& eventQueue[i].idxEnd == -1)
 			{
 				return i;
 			}
@@ -85,7 +100,8 @@ int EventQueue::find(Event _e) {
 		}
 		else
 		{
-			if (_e.idxEnd == eventQueue[i].idxEnd)
+			if (_e.idxEnd == eventQueue[i].idxEnd
+				&& eventQueue[i].idxStart == -1)
 			{
 				return i;
 			}
@@ -136,7 +152,7 @@ bool EventQueue::empty()
 		std::cout << "eventQueue<0!" << std::endl;
 		return true;
 	}
-	if (eventQueue.size()>0)
+	if (eventQueue.size() > 0)
 	{
 		return false;
 	}
@@ -156,9 +172,23 @@ Event EventQueue::front()
 	return eventQueue.front();
 }
 
-void EventQueue::remove(int _i)
+void EventQueue::remove(Event _e)
 {
-	eventQueue.erase(eventQueue.begin() + _i);
+
+	int i = find(_e);
+	if (i >= 0)
+	{
+		eventQueue.erase(eventQueue.begin() + i);
+	}
+	else
+	{
+		cout << " could not remove Event: ERROR i<0" << endl;
+	}
+}
+
+int EventQueue::size()
+{
+	return eventQueue.size();
 }
 
 

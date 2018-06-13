@@ -1,5 +1,6 @@
 #pragma once
 #include "Linie.h"
+#include <iostream>
 
 float ccw(Point p, Point q, Point r);
 
