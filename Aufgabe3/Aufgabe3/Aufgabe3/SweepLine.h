@@ -5,11 +5,11 @@
 #include "Schnitte.h"
 class SweepLine
 {
-private:
+public:
 	//datenstrktur der Sweepline
 	std::vector<LineSegment> sweepLine;
 	
-public:
+
 	SweepLine();
 	~SweepLine();
 	//fügt an stelle von y ein

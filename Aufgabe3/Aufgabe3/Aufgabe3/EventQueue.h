@@ -7,11 +7,10 @@
 //Klasse für die Event Queue
 class EventQueue
 {
-private:
+public:
 	/*Datenstruktur der EventQueue
 	kann in Zukunft durch anderer struktur ersetzt werden*/
 	std::vector<Event> eventQueue;
-public:
 
 	EventQueue();
 	~EventQueue();
@@ -35,6 +34,8 @@ public:
 	void remove(Event _e);
 	//gets the size
 	int size();
+
+
 	
 
 

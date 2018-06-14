@@ -14,7 +14,8 @@ SDL_Renderer* renderer = NULL;
 //The window
 SDL_Window* window = NULL;
 
-//Fps Manager
+//The buffer Texture
+SDL_Texture* mapTexture = NULL;
 
 
 //Event
@@ -31,14 +32,18 @@ void init()
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 
 	//Create window
-	window = SDL_CreateWindow("SDL_Playground", SDL_WINDOWPOS_CENTERED, 
-		SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_RESIZABLE);
+	window = SDL_CreateWindow("SDL_Playground", SDL_WINDOWPOS_CENTERED_DISPLAY(1), SDL_WINDOWPOS_CENTERED_DISPLAY(1)
+		, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_RESIZABLE);
 
 	//Create renderer for window (no VSYNC because manual Framerate cap)
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED |
 		SDL_RENDERER_TARGETTEXTURE);
 
 	drawer = new Drawer(renderer);
+
+	//create Buffer Texture
+	mapTexture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888,
+		SDL_TEXTUREACCESS_TARGET, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 	//Initialize renderer color and Target to Texture
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, OPAQUE);
@@ -49,78 +54,47 @@ void init()
 
 }
 
-void draw(Line _l)
+void SDLdraw(Line _l,int color)
 {
 	_l.p = _l.p * (SCREEN_HEIGHT / 100);
 	_l.q = _l.q * (SCREEN_HEIGHT / 100);
-	drawer->setColor(WHITE);
+	drawer->setColor(color);
 	SDL_RenderDrawLine(renderer, _l.p.x, _l.p.y, _l.q.x, _l.q.y);
-	SDL_RenderPresent(renderer);
+	
 }
 
-void draw(Point _p)
+void SDLdraw(Point _p,int _color)
 {
 	//skalieren
 	_p = _p * (SCREEN_HEIGHT / 100);
-	drawer->setColor(RED);
+	drawer->setColor(_color);
 	drawer->drawcircle(_p.x, _p.y, SCREEN_HEIGHT / 100);
-	SDL_RenderPresent(renderer);
+
 }
 
-
-
-
-/*
-int main(int argc, char* args[])
+void SDLbackground()
 {
-	bool quit = false;
-	//Start up SDL and create window
-	init();
-
-	//pre- loop functions
-
-	//pre- loop functions
-
-
-
-	while (!quit)
-	{
-
-		while (SDL_PollEvent(&event) != 0)
-		{
-			if (event.type == SDL_QUIT)
-			{
-				quit = true;
-			}
-			if (event.type == SDL_KEYDOWN)
-			{
-
-				SDL_SetRenderDrawColor(renderer, 0, 0, 0, OPAQUE);
-				SDL_SetRenderTarget(renderer, NULL);
-				SDL_RenderClear(renderer);
-
-				
-
-			}
-			if (event.type == SDL_MOUSEBUTTONDOWN)
-			{
-
-			}
-		}
-
-
-		SDL_RenderPresent(renderer);
-
-
-	}
-	//Free resources and close SDL
-	close();
-	return 0;
+	
+		SDL_SetRenderTarget(renderer, mapTexture);
+	
+	
 }
 
-*/
+void SDLrenderTexture() {
 
-void clear() {
+
+	SDL_RenderCopy(renderer, mapTexture, NULL, NULL);
+	
+}
+
+void SDLrender() {
+	
+	SDL_RenderPresent(renderer);
+	
+}
+
+
+void SDLclear() {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, OPAQUE);
 	SDL_SetRenderTarget(renderer, NULL);
 	SDL_RenderClear(renderer);
