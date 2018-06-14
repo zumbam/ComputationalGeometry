@@ -8,7 +8,7 @@ void init();
 
 
 void SDLdraw(Line _l,int color);
-void SDLdraw(Point _p,int _color);
+void SDLdraw(Point _p,int _color,int size);
 void SDLbackground();
 void SDLrenderTexture();
 

@@ -18,8 +18,8 @@ using namespace std;
 #define twodoned(x,y,sizex) x+(y*sizex)
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 720;
-const int SCREEN_HEIGHT = 720;
+const int SCREEN_WIDTH = 1080;
+const int SCREEN_HEIGHT = 1080;
 
 //Color constants
 typedef enum {

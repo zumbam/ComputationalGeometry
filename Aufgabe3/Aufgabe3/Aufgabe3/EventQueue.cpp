@@ -37,7 +37,7 @@ void EventQueue::insert(Event _e)
 				if (_e.x >= eventQueue[i].x)
 				{
 
-					eventQueue.insert(eventQueue.begin() + i, _e);
+					eventQueue.insert(eventQueue.begin() + i+1, _e);
 					return;
 				}
 			}
@@ -118,18 +118,10 @@ void EventQueue::fill(std::vector<Line> _l)
 	eventQueue.clear();
 	for (int i = 0; i < _l.size(); i++)
 	{
-		Event e1 = Event(-1, -1, _l[i].p.x, _l[i].p.y);
-		Event e2 = Event(-1, -1, _l[i].q.x, _l[i].q.y);
+		//p == startEvent q ==endevent
+		Event e1 = Event(i, -1, _l[i].p.x, _l[i].p.y);
+		Event e2 = Event(-1, i, _l[i].q.x, _l[i].q.y);
 		//prüfe was davon der Anfangs und Endpunkt ist
-		if (e1.x < e2.x) {
-			e1.idxStart = i;
-			e2.idxEnd = i;
-		}
-		else
-		{
-			e1.idxEnd = i;
-			e2.idxStart = i;
-		}
 		eventQueue.push_back(e1);
 		eventQueue.push_back(e2);
 	}

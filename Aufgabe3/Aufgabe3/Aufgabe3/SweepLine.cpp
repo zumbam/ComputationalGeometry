@@ -33,7 +33,7 @@ void SweepLine::insert(LineSegment _lineSegment)
 			}
 			if (_lineSegment.line.p.y >= y)
 			{
-				sweepLine.insert(sweepLine.begin() + i, _lineSegment);
+				sweepLine.insert(sweepLine.begin() + i+1, _lineSegment);
 				return;
 			}
 		}
@@ -92,7 +92,6 @@ LineSegment SweepLine::getSegment(int _id)
 	}
 	
 }
-
 
 LineSegment SweepLine::getAbove(LineSegment _lineSegment)
 {

@@ -63,12 +63,12 @@ void SDLdraw(Line _l,int color)
 	
 }
 
-void SDLdraw(Point _p,int _color)
+void SDLdraw(Point _p,int _color, int size)
 {
 	//skalieren
 	_p = _p * (SCREEN_HEIGHT / 100);
 	drawer->setColor(_color);
-	drawer->drawcircle(_p.x, _p.y, SCREEN_HEIGHT / 100);
+	drawer->drawcircle(_p.x, _p.y, size*SCREEN_HEIGHT / 500);
 
 }
 
@@ -90,7 +90,7 @@ void SDLrenderTexture() {
 void SDLrender() {
 	
 	SDL_RenderPresent(renderer);
-	
+	SDL_Delay(10);
 }
 
 
