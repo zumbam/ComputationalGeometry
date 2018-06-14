@@ -57,9 +57,7 @@ void EventQueue::insert(Event _e)
 	else
 	{
 #ifdef _DEBUG
-		cout << "event already in queue" << endl;	
-		
-		
+		cout << "event already in queue" << endl;		
 #endif // _DEBUG
 
 

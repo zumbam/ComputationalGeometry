@@ -82,15 +82,19 @@ void SDLbackground()
 
 void SDLrenderTexture() {
 
-
-	SDL_RenderCopy(renderer, mapTexture, NULL, NULL);
+	SDL_Rect rect = { 0,0,SCREEN_WIDTH,SCREEN_HEIGHT };
+	SDL_RenderCopy(renderer, mapTexture, NULL, &rect);
 	
 }
 
 void SDLrender() {
 	
 	SDL_RenderPresent(renderer);
+#ifdef _DEBUG
 	SDL_Delay(10);
+#endif // _DEBUG
+
+	
 }
 
 
