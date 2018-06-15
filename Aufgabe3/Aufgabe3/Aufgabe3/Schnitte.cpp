@@ -43,8 +43,11 @@ bool schnitt(Point p1, Point p2, Point q1, Point q2) {
 
 	if (checkKolinear_1 == 0 && checkKolinear_2 == 0)
 	{
-		
+#ifdef _DEBUG
+
 		cout << "kolinear" << endl;
+#endif // _DEBUG
+
 		return false;
 		
 

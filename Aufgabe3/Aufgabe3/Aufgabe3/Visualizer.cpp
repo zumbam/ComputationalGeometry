@@ -90,10 +90,6 @@ void SDLrenderTexture() {
 void SDLrender() {
 	
 	SDL_RenderPresent(renderer);
-#ifdef _DEBUG
-	SDL_Delay(10);
-#endif // _DEBUG
-
 	
 }
 
