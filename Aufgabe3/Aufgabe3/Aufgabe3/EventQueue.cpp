@@ -20,30 +20,31 @@ void EventQueue::insert(Event _e)
 	if (find(_e) == -1)
 	{
 
-#ifdef _DEBUG
+
 #ifdef INFO
 		cout << "INSERTING: ";
 		_e.print();
 #endif // INFO
-#endif // _DEBUG
+
 		if (eventQueue.size() == 0)
 		{
 			eventQueue.push_back(_e);
 		}
 		else
 		{
-			for (int i = eventQueue.size() - 1; i >= 0; i--)
+			for (int i = 0; i <eventQueue.size() ; i++)
 			{
-				if (_e.x >= eventQueue[i].x)
+				if (_e.x <= eventQueue[i].x)
 				{
 
-					eventQueue.insert(eventQueue.begin() + i+1, _e);
+					eventQueue.insert(eventQueue.begin() + i, _e);
 					return;
 				}
 			}
 			if (_e.x >= 0)
 			{
-				eventQueue.insert(eventQueue.begin(), _e);
+				//higly unlikly even impossible
+				eventQueue.push_back( _e);
 				return;
 			}
 			else
@@ -56,9 +57,9 @@ void EventQueue::insert(Event _e)
 	}
 	else
 	{
-#ifdef _DEBUG
+#ifdef INFO
 		cout << "event already in queue" << endl;		
-#endif // _DEBUG
+#endif // INFO
 
 
 	}

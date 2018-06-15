@@ -18,28 +18,28 @@ void SweepLine::insert(LineSegment _lineSegment)
 	}
 	else
 	{
-		for (int i = sweepLine.size()-1; i >=0; i--)
+		for (int i = 0; i <sweepLine.size(); i++)
 		{
+			float y = sweepLine[i].line.getYat(_lineSegment.line.p.x);
+
+#ifdef INFO
 			Point schnitt = schnittPunkt(sweepLine[i].line, Line(_lineSegment.line.p,
 				{ _lineSegment.line.p.x,1000 }));
-			
-			float y = sweepLine[i].line.getYat(_lineSegment.line.p.x);
 			if (abs(schnitt.y-y)>0.0001f)
 			{
-	#ifdef _DEBUG
-				cout << "Error: Calculating y went wrong" << endl;
-	#endif // _DEBUG
-				
+				cout << "Error: Calculating y went wrong" << endl;		
 			}
-			if (_lineSegment.line.p.y >= y)
+#endif // INFO
+
+			if (_lineSegment.line.p.y <= y)
 			{
-				sweepLine.insert(sweepLine.begin() + i+1, _lineSegment);
+				sweepLine.insert(sweepLine.begin() + i, _lineSegment);
 				return;
 			}
 		}
 		//
 		//cout << "ERROR couldnt insert into sweepLine" << endl;
-		sweepLine.insert(sweepLine.begin(), _lineSegment);
+		sweepLine.insert(sweepLine.end(), _lineSegment);
 		return;
 	}
 
@@ -52,13 +52,12 @@ void SweepLine::remove(LineSegment _lineSegment)
 	{
 		sweepLine.erase(sweepLine.begin() + i);
 	}
-#ifdef _DEBUG
+
 #ifdef INFO
 
 	cout << "Removed LineSegment index:" << _lineSegment.id << endl;
 #endif // INFO
 
-#endif // _DEBUG
 
 }
 

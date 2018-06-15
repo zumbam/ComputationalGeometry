@@ -24,6 +24,7 @@ SDL_Event event;
 
 void init()
 {
+#ifdef VISUALIZE
 	//Initialize SDL
 	SDL_Init(SDL_INIT_VIDEO);
 
@@ -51,57 +52,64 @@ void init()
 	SDL_RenderClear(renderer);
 
 	//Init Framerate manager
+#endif // VISUALIZE
 
 }
 
 void SDLdraw(Line _l,int color)
 {
+#ifdef VISUALIZE
 	_l.p = _l.p * (SCREEN_HEIGHT / 100);
 	_l.q = _l.q * (SCREEN_HEIGHT / 100);
 	drawer->setColor(color);
 	SDL_RenderDrawLine(renderer, _l.p.x, _l.p.y, _l.q.x, _l.q.y);
-	
+#endif // VISUALIZE
 }
 
 void SDLdraw(Point _p,int _color, int size)
 {
+#ifdef VISUALIZE
 	//skalieren
 	_p = _p * (SCREEN_HEIGHT / 100);
 	drawer->setColor(_color);
 	drawer->drawcircle(_p.x, _p.y, size*SCREEN_HEIGHT / 500);
-
+#endif // VISUALIZE
 }
 
 void SDLbackground()
 {
+#ifdef VISUALIZE
 	
 		SDL_SetRenderTarget(renderer, mapTexture);
-	
+#endif // VISUALIZE
 	
 }
 
 void SDLrenderTexture() {
-
+#ifdef VISUALIZE
 	SDL_Rect rect = { 0,0,SCREEN_WIDTH,SCREEN_HEIGHT };
 	SDL_RenderCopy(renderer, mapTexture, NULL, &rect);
-	
+#endif // VISUALIZE
 }
 
 void SDLrender() {
-	
+#ifdef VISUALIZE
 	SDL_RenderPresent(renderer);
-	
+#endif // VISUALIZE	
 }
 
 
 void SDLclear() {
+#ifdef VISUALIZE
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, OPAQUE);
 	SDL_SetRenderTarget(renderer, NULL);
 	SDL_RenderClear(renderer);
+#endif // VISUALIZE
 }
 
 void close()
 {
+#ifdef VISUALIZE
 	//Destroy window and Renderer
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
@@ -110,6 +118,7 @@ void close()
 
 	//Quit SDL
 	SDL_Quit();
+#endif // VISUALIZE
 }
 
 
