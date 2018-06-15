@@ -6,6 +6,7 @@
 #include <fstream>
 
 
+
 Drawer* drawer = NULL;
 
 //The window renderer
@@ -22,7 +23,7 @@ SDL_Texture* mapTexture = NULL;
 SDL_Event event;
 
 
-void init()
+void SDLinit()
 {
 #ifdef VISUALIZE
 	//Initialize SDL
@@ -98,6 +99,14 @@ void SDLrender() {
 #endif // VISUALIZE	
 }
 
+void SDLclearBackground() {
+#ifdef VISUALIZE
+	SDL_SetRenderTarget(renderer, mapTexture);
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, OPAQUE);
+	SDL_RenderClear(renderer);
+#endif // VISUALIZE
+
+}
 
 void SDLclear() {
 #ifdef VISUALIZE

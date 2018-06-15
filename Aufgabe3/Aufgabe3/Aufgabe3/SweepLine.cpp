@@ -18,16 +18,16 @@ void SweepLine::insert(LineSegment _lineSegment)
 	}
 	else
 	{
-		for (int i = 0; i <sweepLine.size(); i++)
+		for (int i = 0; i < sweepLine.size(); i++)
 		{
 			float y = sweepLine[i].line.getYat(_lineSegment.line.p.x);
 
 #ifdef INFO
 			Point schnitt = schnittPunkt(sweepLine[i].line, Line(_lineSegment.line.p,
 				{ _lineSegment.line.p.x,1000 }));
-			if (abs(schnitt.y-y)>0.0001f)
+			if (abs(schnitt.y - y) > 0.0001f)
 			{
-				cout << "Error: Calculating y went wrong" << endl;		
+				cout << "Error: Calculating y went wrong" << endl;
 			}
 #endif // INFO
 
@@ -38,7 +38,7 @@ void SweepLine::insert(LineSegment _lineSegment)
 			}
 		}
 		//
-		//cout << "ERROR couldnt insert into sweepLine" << endl;
+
 		sweepLine.insert(sweepLine.end(), _lineSegment);
 		return;
 	}
@@ -73,23 +73,31 @@ void SweepLine::swap(int i1, int i2)
 	}
 	else
 	{
-		cout << "Swapping not possible one or more elements not found"<<endl;
+#ifdef INFO
+		cout << "Swapping not possible one or more elements not found" << endl;
+#endif // INFO
+
 	}
 }
 
 LineSegment SweepLine::getSegment(int _id)
 {
 	int i = getSegmentPosition(_id);
-	if (i!=-1)
+	if (i != -1)
 	{
 		return sweepLine[i];
 	}
 	else
 	{
+#ifdef INFO
 		cout << "ERROR: could not get Segment" << endl;
+
+#endif // INFO
+
+
 		return LineSegment();
 	}
-	
+
 }
 
 LineSegment SweepLine::getAbove(LineSegment _lineSegment)
@@ -139,8 +147,12 @@ int SweepLine::getSegmentPosition(int _id)
 			}
 
 		}
-		//LineSegment not found;
+#ifdef INFO
+	//LineSegment not found;
 		cout << "ERROR: LineSegment not Found! from:" << _id << endl;
+#endif // DEBUG
+
+	
 		return -1;
 	}
 	cout << "index negative" << _id << endl;

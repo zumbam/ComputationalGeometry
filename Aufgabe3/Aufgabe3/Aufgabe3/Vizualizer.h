@@ -1,9 +1,9 @@
 #include "Linie.h"
-
+//#define VISUALIZE
 
 
 //Starts up SDL and creates window
-void init();
+void SDLinit();
 
 
 
@@ -13,6 +13,8 @@ void SDLbackground();
 void SDLrenderTexture();
 
 void SDLrender();
+
+void SDLclearBackground();
 
 void SDLclear();
 
