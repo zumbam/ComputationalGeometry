@@ -71,15 +71,36 @@ SVGReader::SVGReader(std::string path)
 
 	pt = pt.get_child("svg");
 
+	BOOST_FOREACH(tree::value_type &v, pt.get_child("")) {
+		if (v.first == "path") {
+			std::string id = v.second.get<std::string>("<xmlattr>.id");
+			std::string cx = v.second.get<std::string>("<xmlattr>.sodipodi:cx");
+			std::string cy = v.second.get<std::string>("<xmlattr>.sodipodi:cy");
+			städte.push_back(
+				Stadt(id, 
+					Point2D(atof(cx.c_str()), atof(cy.c_str()))
+				)
+			);
+
+			//std::cout << "node:\t" << id << "\tcx:\t" << cx << "\tcy:\t" << cy << std::endl;
+		}
+
+
+	}
+
 	BOOST_FOREACH(tree::value_type &v, pt.get_child("g")) {
 
-		//The data function is used to access the data stored in a node.	
+		// get subtree.	
 		tree cur_path = v.second;
+		// access attribute via subnode map
 		std::string id = cur_path.get<std::string>("<xmlattr>.id");
 		std::string path = cur_path.get<std::string>("<xmlattr>.d");
 		BundesLand curstate = parsePath(path, id);
 		land.push_back(curstate);
 	}
+
+
+
 
 	// test only first element
 	//std::string id = pt.get<std::string>("path.<xmlattr>.id");
@@ -104,4 +125,9 @@ SVGReader::~SVGReader()
 std::vector<BundesLand> SVGReader::getLand()
 {
 	return land;
+}
+
+std::vector<Stadt> SVGReader::getStädte()
+{
+	return städte;
 }

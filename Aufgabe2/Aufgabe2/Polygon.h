@@ -86,4 +86,16 @@ friend std::ostream& operator<<(std::ostream& stream, const BundesLand& bundesla
 }
 };
 
+class Stadt {
+public:
+
+	Stadt(const std::string &name, const Point2D &center) {
+		this->name = name;
+		this->center = center;
+	}
+	Point2D center;
+	std::string name;
+
+};
+
 #endif
