@@ -3,11 +3,16 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Ignore Boost
+boost_1_62_0/*
+
+
 # User-specific files
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+*.vcxproj.filters merge=union
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
