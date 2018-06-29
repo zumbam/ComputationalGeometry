@@ -1,0 +1,134 @@
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200000 D2|qconvex s
+
+Convex hull of 200000 points in 2-d:
+
+  Number of vertices: 27
+  Number of facets: 27
+
+Statistics for: rbox 200000 D2 | qconvex s
+
+  Number of points processed: 27
+  Number of hyperplanes created: 52
+  Number of distance tests for qhull: 1238991
+  CPU seconds to compute hull (after input): 0.047
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200000 D3|qconvex s
+
+Convex hull of 200000 points in 3-d:
+
+  Number of vertices: 205
+  Number of facets: 389
+  Number of non-simplicial facets: 5
+
+Statistics for: rbox 200000 D3 | qconvex s
+
+  Number of points processed: 260
+  Number of hyperplanes created: 1225
+  Number of distance tests for qhull: 2279384
+  Number of distance tests for merging: 5464
+  Number of distance tests for checking: 2830
+  Number of merged facets: 29
+  CPU seconds to compute hull (after input): 0.093
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200000 D4|qconvex s
+
+Convex hull of 200000 points in 4-d:
+
+  Number of vertices: 919
+  Number of facets: 5169
+  Number of non-simplicial facets: 9
+
+Statistics for: rbox 200000 D4 | qconvex s
+
+  Number of points processed: 1407
+  Number of hyperplanes created: 26606
+  Number of distance tests for qhull: 7155229
+  Number of distance tests for merging: 140872
+  Number of distance tests for checking: 40040
+  Number of merged facets: 138
+  CPU seconds to compute hull (after input): 0.311
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200000 D5|qconvex s
+
+Convex hull of 200000 points in 5-d:
+
+  Number of vertices: 2950
+  Number of facets: 62935
+  Number of non-simplicial facets: 112
+
+Statistics for: rbox 200000 D5 | qconvex s
+
+  Number of points processed: 5049
+  Number of hyperplanes created: 474893
+  Number of distance tests for qhull: 38664247
+  Number of distance tests for merging: 3248473
+  Number of distance tests for checking: 560048
+  Number of merged facets: 913
+  CPU seconds to compute hull (after input): 2.906
+  Maximum distance of point above facet: 3e-015 (0.2x)
+  Maximum distance of vertex below facet: -4.4e-015 (0.3x)
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200000 D6|qconvex s
+
+Convex hull of 200000 points in 6-d:
+
+  Number of vertices: 6954
+  Number of facets: 667484
+  Number of non-simplicial facets: 1045
+
+Statistics for: rbox 200000 D6 | qconvex s
+
+  Number of points processed: 11957
+  Number of hyperplanes created: 6156594
+  Number of distance tests for qhull: 272307502
+  Number of distance tests for merging: 54290058
+  Number of distance tests for checking: 6805421
+  Number of merged facets: 12957
+  CPU seconds to compute hull (after input): 55.47
+  Maximum distance of point above facet: 8e-015 (0.3x)
+  Maximum distance of vertex below facet: -1e-014 (0.4x)
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200000 D7|qconvex s
+QH6082 qhull error (qh_memalloc): insufficient memory to allocate 1013740 bytes
+
+While executing: rbox 200000 D7 | qconvex s
+Options selected for Qhull 2015.2 2016/01/18:
+  run-id 401928445  summary  Qxact_merge  _zero-centrum
+  Q3-no-merge-vertices-dim-high  _max-width  1  Error-roundoff 2.2e-015
+  _one-merge 3.3e-014  _near-inside 1.6e-013  Visible-distance 1.3e-014
+  U-coplanar-distance 1.3e-014  Width-outside 2.6e-014  _wide-facet 7.9e-014
+Last point added to hull was p61146.  Last merge was #118006.
+
+At error exit:
+
+Convex hull of 200000 points in 7-d:
+
+  Number of vertices: 12093
+  Number of coplanar points: 7
+  Number of facets: 6079092
+  Number of non-simplicial facets: 6771
+
+Statistics for: rbox 200000 D7 | qconvex s
+
+  Number of points processed: 19507
+  Number of hyperplanes created: 61215164
+  Number of distance tests for qhull: -2128716127
+  Number of distance tests for merging: 593325586
+  Number of distance tests for checking: 0
+  Number of merged facets: 118076
+  Maximum distance of merged point above facet: 1.5e-014 (0.4x)
+  Maximum distance of merged vertex below facet: -1.5e-014 (0.4x)
+
+
+precision problems (corrected unless 'Q0' or an error)
+  36824 coplanar horizon facets for new vertices
+     53 coplanar points during partitioning
+   2885 nearly singular or axis-parallel hyperplanes
+     13 zero divisors during back substitute
+     13 zero divisors during gaussian elimination
+QH6263 qhull internal warning (main): did not free 1013740 bytes of long memory(1 pieces)

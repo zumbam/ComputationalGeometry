@@ -1,0 +1,111 @@
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200 D2|qconvex s
+
+Convex hull of 200 points in 2-d:
+
+  Number of vertices: 11
+  Number of facets: 11
+
+Statistics for: rbox 200 D2 | qconvex s
+
+  Number of points processed: 11
+  Number of hyperplanes created: 20
+  Number of distance tests for qhull: 1326
+  CPU seconds to compute hull (after input):  0
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>
+
+Convex hull of 200 points in 3-d:
+
+  Number of vertices: 37
+  Number of facets: 70
+
+Statistics for: rbox 200 D3 | qconvex s
+
+  Number of points processed: 43
+  Number of hyperplanes created: 171
+  Number of distance tests for qhull: 2529
+  CPU seconds to compute hull (after input):  0
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200 D4|qconvex s
+
+Convex hull of 200 points in 4-d:
+
+  Number of vertices: 86
+  Number of facets: 447
+
+Statistics for: rbox 200 D4 | qconvex s
+
+  Number of points processed: 107
+  Number of hyperplanes created: 1610
+  Number of distance tests for qhull: 7513
+  CPU seconds to compute hull (after input):  0
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200 D5|qconvex s
+
+Convex hull of 200 points in 5-d:
+
+  Number of vertices: 119
+  Number of facets: 1998
+
+Statistics for: rbox 200 D5 | qconvex s
+
+  Number of points processed: 133
+  Number of hyperplanes created: 7203
+  Number of distance tests for qhull: 23896
+  CPU seconds to compute hull (after input): 0.015
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200 D6|qconvex s
+
+Convex hull of 200 points in 6-d:
+
+  Number of vertices: 155
+  Number of facets: 9280
+
+Statistics for: rbox 200 D6 | qconvex s
+
+  Number of points processed: 175
+  Number of hyperplanes created: 36690
+  Number of distance tests for qhull: 71272
+  CPU seconds to compute hull (after input): 0.094
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200 D7|qconvex s
+
+Convex hull of 200 points in 7-d:
+
+  Number of vertices: 176
+  Number of facets: 42312
+  Number of non-simplicial facets: 1
+
+Statistics for: rbox 200 D7 | qconvex s
+
+  Number of points processed: 191
+  Number of hyperplanes created: 178152
+  Number of distance tests for qhull: 278180
+  Number of distance tests for merging: 979173
+  Number of distance tests for checking: 484276
+  Number of merged facets: 2
+  CPU seconds to compute hull (after input): 0.766
+
+
+D:\QSync\Master_Studium\computational_geometry\Praktikum\ComputationalGeometry\Aufgabe4\qhull-2015.2\qhull-2015.2\bin>rbox 200 D8|qconvex s
+
+Convex hull of 200 points in 8-d:
+
+  Number of vertices: 188
+  Number of facets: 181885
+  Number of non-simplicial facets: 1
+
+Statistics for: rbox 200 D8 | qconvex s
+
+  Number of points processed: 194
+  Number of hyperplanes created: 732345
+  Number of distance tests for qhull: 1038408
+  Number of distance tests for merging: 5869635
+  Number of distance tests for checking: 4610708
+  Number of merged facets: 11
+  CPU seconds to compute hull (after input): 5.593

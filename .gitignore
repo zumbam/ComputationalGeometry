@@ -5,6 +5,7 @@
 
 # Ignore Boost
 boost_1_62_0/*
+*/qhull-2015.2/*
 
 
 # User-specific files
@@ -12,7 +13,7 @@ boost_1_62_0/*
 *.user
 *.userosscache
 *.sln.docstates
-*.vcxproj.filters merge=union
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
