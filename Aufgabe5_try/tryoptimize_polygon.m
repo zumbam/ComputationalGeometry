@@ -72,7 +72,8 @@ figure('name','contour of borders')
 
 patch('x', [-1 11], 'y', [-1 11], 'FaceColor','black','EdgeColor', 'white')
 patch('x', A(:,1),'y', A(:,2), 'FaceColor', 'red')
-
+% !!!!!!!the - sign has to be changed for using the test polygon
+% because of the polygon Point order !!!!!!!!!
 normals = -normals
 
 % get number of edge constraights
