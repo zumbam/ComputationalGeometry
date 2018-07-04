@@ -72,8 +72,7 @@ figure('name','contour of borders')
 
 patch('x', [-1 11], 'y', [-1 11], 'FaceColor','black','EdgeColor', 'white')
 patch('x', A(:,1),'y', A(:,2), 'FaceColor', 'red')
-% !!!!!!!the - sign has to be changed for using the test polygon
-% because of the polygon Point order !!!!!!!!!
+
 normals = -normals
 
 % get number of edge constraights
@@ -96,14 +95,13 @@ constraint(num_polygon_contraints+1:end, 1:2) = -normals(:,:);
 constraint(num_polygon_contraints+1:end, 3) = 1;
 constraint_condition(num_polygon_contraints+1: end) = -dot(A(2:end,:), normals, 2);
 
-f = [0 0 -1]
-c = linprog(f,constraint,constraint_condition)
 
-t = linspace(0, 2*pi);
-r = 1;
-x = c(1) + c(3)*cos(t);
-y = c(2) + c(3)*sin(t);
-patch(x, y, 'g')
-axis equal
+
+
+
+f = [0 0 -1]
+[c_x, c_x, c_r] = linprog(f,constraint,constraint_condition)
+
+viscircles([c_x, ,c_r)
 
 
