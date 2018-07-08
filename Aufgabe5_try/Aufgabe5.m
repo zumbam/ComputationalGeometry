@@ -83,8 +83,8 @@ constraint = zeros([num_polygon_contraints*2, 3]);
 constraint_condition = zeros([num_polygon_contraints*2, 1]);
 % first dimisions are the borders for the polygon
 % A = [n_x n_y 0] B= [-p_x * n_x  -p_y * n_y]
-constraint(1:num_polygon_contraints, 1:2) = -normals;
-constraint_condition(1:num_polygon_contraints) = -dot(A(2:end,:), normals, 2);
+% constraint(1:num_polygon_contraints, 1:2) = -normals;
+% constraint_condition(1:num_polygon_contraints) = -dot(A(2:end,:), normals, 2);
 % the following are the contraint for the min r
 % it will be expressed as follows r <= d(x, y)
 % d (x, y) = x * n_x + y * n_y - (p_x * n_x + p_y * n_y)
